@@ -1,11 +1,11 @@
 ## What
-  <!-- What does this PR change? -->                                                                                                                                                                                                                                                                               
+<!-- What does this PR change? -->                                                                                                                                                                                                                                                                               
 
 ## Why
 Closes #
 
 ## How tested
-  <!-- Tests run, Bruno requests, screenshots -->                                                                                                                                                                                                                                                                  
+<!-- Tests run, Bruno requests, screenshots -->                                                                                                                                                                                                                                                                  
 
 ## Checklist
 - [ ] Acceptance criteria met
