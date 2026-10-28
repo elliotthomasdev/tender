@@ -12,4 +12,4 @@ Closes #
 - [ ] Tests added/updated and passing
 - [ ] Bruno requests updated
 - [ ] OpenAPI docs accurate
-- [ ] README/ADR updated if behavior or design ch
+- [ ] README/ADR updated if behavior or design changed
