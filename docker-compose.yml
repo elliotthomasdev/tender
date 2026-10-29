@@ -1,0 +1,20 @@
+name: tender
+services:
+  postgres:
+    image: postgres:18
+    container_name: tender-postgres
+    environment:
+      POSTGRES_DB: tender
+      POSTGRES_USER: tender
+      POSTGRES_PASSWORD: tender
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tender -d tender"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
