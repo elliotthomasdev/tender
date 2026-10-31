@@ -14,7 +14,10 @@ Gift card platform with a merchant portal. *Personal learning project.*
 Java 21 · Spring Boot · PostgreSQL · Flyway · Kafka · Keycloak · Docker · GitHub Actions · React
 
 ## Run locally
+- Prerequisites: Java 21 and Docker.
+
 ```bash
+docker compose up -d
 ./gradlew build
 ./gradlew :card-service:bootRun
 ```
