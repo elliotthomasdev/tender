@@ -39,7 +39,6 @@ public class Card {
     private Instant updatedAt;
 
     protected Card() {
-
     }
 
     public Card(BigDecimal balance, String currency) {

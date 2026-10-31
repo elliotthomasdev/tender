@@ -11,9 +11,7 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 
 import java.math.BigDecimal;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @Testcontainers
@@ -38,9 +36,9 @@ class CardRepositoryTest {
         entityManager.clear();
         var found = cardRepository.findById(saved.getId()).orElseThrow();
         assertThat(found.getBalance()).isEqualByComparingTo("25.00");
-        assertEquals("EUR", found.getCurrency());
-        assertNotNull(found.getId());
-        assertNotNull(found.getCreatedAt());
-        assertNotNull(found.getUpdatedAt());
+        assertThat(found.getCurrency()).isEqualTo("EUR");
+        assertThat(found.getId()).isEqualTo(saved.getId());
+        assertThat(found.getCreatedAt()).isNotNull();
+        assertThat(found.getUpdatedAt()).isNotNull();
     }
 }
