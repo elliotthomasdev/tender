@@ -23,7 +23,7 @@ class CardServiceTest {
     CardService cardService;
 
     @Test
-    void issuesCardSuccessfully() {
+    void issue_ValidRequest_SavesCardAndReturnsResponse() {
         // Arrange
         IssueCardRequest request = new IssueCardRequest(new BigDecimal("25.00"), "EUR");
         when(cardRepository.saveAndFlush(any())).thenAnswer(invocation -> invocation.getArgument(0));
