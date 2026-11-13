@@ -35,8 +35,8 @@ class CardIssueIntegrationTest {
     private final MockMvc mockMvc;               // sends the request in
     private final CardRepository cardRepository; // checks what landed in the DB
 
+    // JUnit creates the test class, so Spring needs this to inject the constructor
     @Autowired
-        // JUnit creates the test class, so Spring needs this to inject the constructor
     CardIssueIntegrationTest(MockMvc mockMvc, CardRepository cardRepository) {
         this.mockMvc = mockMvc;
         this.cardRepository = cardRepository;
