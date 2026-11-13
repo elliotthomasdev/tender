@@ -8,3 +8,4 @@ All notable changes to this project will be documented in this file.
 - card-service: PostgreSQL via Docker Compose, Flyway migrations, `cards` table (V1).
 - Integration test that boots the full app against a Testcontainers Postgres.
 - README, issue and PR templates.
+- card-service: `POST /cards` to issue a gift card with an initial balance and currency.
