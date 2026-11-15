@@ -22,6 +22,13 @@ docker compose up -d
 ./gradlew :card-service:bootRun
 ```
 
+## API testing
+- Requires the [Bruno](https://www.usebruno.com/) app
+- Open the collection folder `bruno/`
+- Select the `local` environment
+- Start the app (see [Run locally](#run-locally))
+- Right-click **card-service** → **Run**; every request has assertions
+
 ## Docs
 - Architecture decisions: docs/adr/
 - SQL reports: docs/sql/

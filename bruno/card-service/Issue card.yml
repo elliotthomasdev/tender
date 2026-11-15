@@ -1,0 +1,36 @@
+info:
+  name: Issue card
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/cards"
+  body:
+    type: json
+    data: |-
+      {
+        "initialBalance": 25.00,
+        "currency": "EUR"
+      }
+  auth: inherit
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "201"
+    - expression: res.body.id
+      operator: isDefined
+    - expression: res.body.balance
+      operator: eq
+      value: "25"
+    - expression: res.headers.location
+      operator: isDefined
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,29 @@
+info:
+  name: Issue card - invalid balance
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/cards"
+  body:
+    type: json
+    data: |-
+      {
+        "initialBalance": -5.00,
+        "currency": "EUR"
+      }
+  auth: inherit
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "400"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
