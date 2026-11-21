@@ -29,7 +29,7 @@ class CardControllerTest {
     @Test
     void postCards_ValidRequest_Returns201WithCard() throws Exception {
         UUID id = UUID.randomUUID();
-        Instant createdAt = Instant.now();
+        Instant createdAt = Instant.parse("2026-11-21T10:15:30Z");
 
         when(cardService.issue(any())).thenReturn(new CardResponse(id, new BigDecimal("25.00"), "USD", createdAt));
 
@@ -42,7 +42,8 @@ class CardControllerTest {
                 .andExpect(header().string("Location", endsWith("/cards/" + id)))
                 .andExpect(jsonPath("$.id").value(id.toString()))
                 .andExpect(jsonPath("$.currency").value("USD"))
-                .andExpect(jsonPath("$.balance").value(25.00));
+                .andExpect(jsonPath("$.balance").value(25.00))
+                .andExpect(jsonPath("$.createdAt").value("2026-11-21T10:15:30Z"));
 
         verify(cardService).issue(new IssueCardRequest(new BigDecimal("25.00"), "USD"));
     }
