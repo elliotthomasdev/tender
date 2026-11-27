@@ -1,0 +1,29 @@
+info:
+  name: Issue card - invalid JSON
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/cards"
+  body:
+    type: json
+    data: |-
+      {
+        "initialBalance": "avb",
+        "currency": "EUR"
+      }
+  auth: inherit
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "400"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
